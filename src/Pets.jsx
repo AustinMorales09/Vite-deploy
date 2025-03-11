@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import {BACKEND_URL} from './config';
 const Pets = () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/pets")
+        axios.get(BACKEND_URL + "pets")
             .then(response => setPets(response.data))
             .catch(error => console.error("Error fetching pets:", error));
     }, []);
