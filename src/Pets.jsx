@@ -5,7 +5,7 @@ const Pets = () => {
     const [pets, setPets] = useState([]);
 // comment
     useEffect(() => {
-        axios.get(`https://vite-backend-aqbv.onrender.com/pets`)
+        axios.get(`${BACKEND_URL}pets`)
             .then(response => setPets(response.data))
             .catch(error => console.error("Error fetching pets:", error));
     }, []);
