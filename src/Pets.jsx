@@ -5,7 +5,7 @@ const Pets = () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        axios.get(BACKEND_URL + "pets")
+        axios.get(`${BACKEND_URL}pets`)
             .then(response => setPets(response.data))
             .catch(error => console.error("Error fetching pets:", error));
     }, []);
